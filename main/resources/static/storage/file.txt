@@ -1,0 +1,14 @@
+#######################################################################################################################
+#                                          Algorithm Type                                                             #  
+#######################################################################################################################
+CI_ALG_TYPE;ALG_TYPE_CD like 'CM%' AND OWNER_FLG='CM';VERSION
+CI_ALG_TYPE_L;ALG_TYPE_CD like 'CM%' AND OWNER_FLG='CM';VERSION
+CI_ALG_TYPE_PRM;ALG_TYPE_CD like 'CM%' AND OWNER_FLG='CM';VERSION
+CI_ALG_TYPE_PRM_L;ALG_TYPE_CD like 'CM%' AND OWNER_FLG='CM';VERSION
+#######################################################################################################################
+#                                          Algorithm                                                                  #  
+#######################################################################################################################
+CI_ALG;UPPER(ALG_CD) LIKE 'CM%' AND OWNER_FLG='CM';VERSION
+CI_ALG_L;UPPER(ALG_CD) LIKE 'CM%' AND OWNER_FLG='CM';VERSION
+CI_ALG_PARM;UPPER(ALG_CD) LIKE 'CM%' AND OWNER_FLG='CM';VERSION
+CI_ALG_VER;UPPER(ALG_CD) LIKE 'CM%' AND OWNER_FLG='CM';VERSION

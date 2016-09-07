@@ -1,0 +1,54 @@
+
+<div class="row">
+	<div class="container">
+		<h2 style="color: #bf3e11">Dashboard</h2>
+		<hr />
+		<div class="row shrt-cuts">
+			<div class="col-lg-12">
+				<a href="#/createpatch" class="btn btn-default btn-lg" role="button"><span class="fa fa-cube"></span> <br>Create Patch</a>
+				<!-- a href="#/dbpatch" class="btn btn-info btn-lg" role="button"><span class="fa fa-database"></span> <br>Create DB Patch</a-->
+				<a href="#" class="btn btn-danger btn-lg" role="button"><span class="fa fa-cubes"></span> <br>Create Service Pack</a>
+			</div>
+		</div>
+		
+		<div class="panel panel-default">
+			<div class="panel-body">
+
+				<table class="table table-striped">
+					<tr>
+						<th>Select</th>
+						<th>Description</th>
+						<th>Environment</th>
+						<th>Destination</th>
+						<th>Created Date</th>
+						<th>Status</th>
+						<th>Action</th>
+					</tr>
+					</tr>
+					<tr ng-repeat="str in strarrays">
+						<td><input type="checkbox"></td>
+						<td>{{str.desc}}</td>
+						<td>{{str.env.envName}}</td>
+						<td>{{str.dest}}</td>
+						<td>{{str.createdBy}}</td>
+						<td>{{str.status}}</td>
+						<td>
+						<div class="btn-group" role="group" aria-label="...">
+						  <button type="button" class="btn btn-default"><i class="fa fa-trash"></i></button>
+						  <button type="button" class="btn btn-default"><i class="fa fa-list-alt"></i></button>
+						</div>
+						<!--input type="button" class="btn btn-sm btn-primary" value="Delete" checked="checked" submit="alert('test')"-->
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<style>
+.shrt-cuts .btn:not(.btn-block) {
+    margin-bottom: 10px;
+}
+</style>
