@@ -310,17 +310,26 @@ tronApp.controller('EnvironementeController', function($scope, $rootScope,
 	$scope.environmentToShow = {
 		environments : []
 	};
+	
+	$scope.loadData = function() {
+		
+		$http.get("/environments").success(function(environments, status) {
+			$scope.environments = environments;
+		});		
+	};
+	
+	//initail load
+	$scope.loadData();
 
-	$http.get("/environments").success(function(environments, status) {
-		$scope.environments = environments;
-	});
 
 	$scope.saveEnvironment = function saveEnvironment() {
 		$http.post('/environments', $scope.environment).success(
 				function(data, status, headers) {
 					//$window.location.reload();;
 					//alert('Configuration Saved');
+					$('#myModal').modal('toggle');
 					toastr.success('Configuration Saved!', 'Alert!');
+					$scope.loadData();
 
 				}).error(function(data, status, headers) {
 			//alert('Configuration Error');
@@ -332,7 +341,7 @@ tronApp.controller('EnvironementeController', function($scope, $rootScope,
 		$http.post('/environment/delete', environment).success(function(data, status, headers) {
 					console.log(">> Deleted..");
 					toastr.success('Configuration Deleted!', 'Alert!');
-					$window.location.reload();
+					$scope.loadData();
 				}).error(function(data, status, headers) {
 					toastr.error(data.message, 'Error Deleting Entry!');
 			
